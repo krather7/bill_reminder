@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/spenserlogan/bill_reminder/issues"
   },
-  "homepage": "https://github.com/spenserlogan/bill_reminder#readme"
+  "homepage": "https://github.com/spenserlogan/bill_reminder#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "sequelize": "^6.6.2"
+  }
 }
