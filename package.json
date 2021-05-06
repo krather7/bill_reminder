@@ -1,0 +1,25 @@
+{
+  "name": "bill_reminder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spenserlogan/bill_reminder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spenserlogan/bill_reminder/issues"
+  },
+  "homepage": "https://github.com/spenserlogan/bill_reminder#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "sequelize": "^6.6.2"
+  }
+}
