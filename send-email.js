@@ -1,4 +1,4 @@
-const nodemailer = reqiure('nodemailer');
+const nodemailer = require('nodemailer');
 
 let transporter = nodemailer.createTransport({
     service: '',
