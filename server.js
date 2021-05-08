@@ -1,5 +1,3 @@
-// Hello world, this is a test
-
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
