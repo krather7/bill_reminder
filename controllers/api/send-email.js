@@ -1,23 +1,28 @@
 const nodemailer = require('nodemailer');
 require('dotenv').config();
-// const {User} = require('./models/User');
-// const bcrypt = require('bcrypt');
+const {User} = require('../../models');
+const bcrypt = require('bcrypt');
 
 let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        // model: User,
         user: process.env.EMAIL,
         pass: process.env.PASSWORD
     }
 });
 
+const sendEmail = async () => {
+    const userRaw = await User.findByPk(4)
+    const user = userRaw.get({ plain: true })
+    console.log('>>> user data : ', user);
+
 let mailOption = {
     from: 'bill.reminder.project@gmail.com',
-    to: 'samuel6roth@gmail.com',
+    to: [user.email],
     subject: 'testing',
     text: `Is this working?`,
 };
+
 
 transporter.sendMail(mailOption, function (err, data) {
     if(err) {
@@ -26,3 +31,10 @@ transporter.sendMail(mailOption, function (err, data) {
         console.log('Email sent: ' + data.response)
     }
 });
+}
+// sendEmail();
+// const emailselector = async () => {
+    
+// }
+
+module.exports = sendEmail;
