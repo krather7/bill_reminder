@@ -1,0 +1,6 @@
+DB_NAME=billreminder_db
+DB_PASSWORD='yourRootPassword'
+DB_USER='root'
+
+PASSWORD=fleetwoodmac
+EMAIL=bill.reminder.project@gmail.com

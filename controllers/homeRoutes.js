@@ -1,9 +1,12 @@
 const router = require('express').Router();
 const { Bill, User } = require('../models');
 const withAuth = require('../utils/auth');
+const sendEmail =  require('./api/send-email');
 
 router.get('/', async (req, res) => {
   try {
+    sendEmail();
+    console.log('Sent email!')
     // Get all projects and JOIN with user data
     const billData = await Bill.findAll({
       include: [
