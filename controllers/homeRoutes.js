@@ -7,6 +7,9 @@ router.get('/', async (req, res) => {
   try {
     sendEmail();
     console.log('Sent email!')
+
+router.get('/', async (req, res) => {
+  try {
     // Get all projects and JOIN with user data
     const billData = await Bill.findAll({
       include: [

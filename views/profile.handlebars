@@ -8,22 +8,22 @@
   <div class="col-md-6">
     <h3>Add a New Bill:</h3>
 
-    <form class="form new-project-form">
+    <form class="form new-bill-form">
       <div class="form-group">
-        <label for="project-name">Bill Name:</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
+        <label for="bill-name">Bill Name:</label>
+        <input class="form-input" type="text" id="bill-name" name="bill-name" />
       </div>
       <div class="form-group">
-        <label for="project-funding">Amount:</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
+        <label for="bill-amount">Amount:</label>
+        <input class="form-input" type="number" id="bill-amount" name="bill-amount" />
       </div>
       <div class="form-group">
-        <label for="project-funding">Due Date:</label>
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
+        <label for="due-date">Due Date:</label>
+        <input class="form-input" type="number" id="due-date" name="due-date" />
       </div>
       <div class="form-group">
-        <label for="project-desc">Bill Type:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+        <label for="bill-type">Bill Type:</label>
+        <textarea class="form-input" type="text" id="bill-type" name="bill-type"></textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Create</button>
@@ -31,14 +31,19 @@
     </form>
   </div>
 
-  {{#if bill.length}}
-  <div class="col-md-6 project-list">
+
+  {{#if bills.length}}
+  <div class="col-md-6 bill-list">
     <h3>Current Bills:</h3>
 
-    {{#each bill as |bill|}}
+    {{#each bills as |bill|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/homepage/{{bill.id}}">{{bill.name}}</a></h4>
+        <h4 href="/bill/{{bill.id}}">{{bill.name}}</p>
+        <p href="/bill/{{bill.id}}">Amount Due:  ${{bill.bill_amount}}</p>
+        <p href="/bill/{{bill.id}}">Due Date: {{bill.due_date}}</p>
+        <p href="/bill/{{bill.id}}">Bill Type: {{bill.bill_type}}</p>
+        
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{bill.id}}">DELETE</button>
