@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Add a New Bill:</h3>
+
+    <form class="form new-bill-form">
+      <div class="form-group">
+        <label for="bill-name">Bill Name:</label>
+        <input class="form-input" type="text" id="bill-name" name="bill-name" />
+      </div>
+      <div class="form-group">
+        <label for="bill-amount">Amount:</label>
+        <input class="form-input" type="number" id="bill-amount" name="bill-amount" />
+      </div>
+      <div class="form-group">
+        <label for="due-date">Due Date:</label>
+        <input class="form-input" type="number" id="due-date" name="due-date" />
+      </div>
+      <div class="form-group">
+        <label for="bill-type">Bill Type:</label>
+        <textarea class="form-input" type="text" id="bill-type" name="bill-type"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if bills.length}}
+  <div class="col-md-6 bill-list">
+    <h3>Current Bills:</h3>
+
+    {{#each bills as |bill|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4 href="/bill/{{bill.id}}">{{bill.name}}</p>
+        <p href="/bill/{{bill.id}}">Amount Due:  ${{bill.bill_amount}}</p>
+        <p href="/bill/{{bill.id}}">Due Date: {{bill.due_date}}</p>
+        <p href="/bill/{{bill.id}}">Bill Type: {{bill.bill_type}}</p>
+
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{bill.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/profile.js"></script>

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "House Payment",
+    "bill_type": "Mortgage",
+    "due_date": 5,
+    "bill_amount": 1000
+  },
+  {
+    "name": "Phone Payment",
+    "bill_type": "Communication",
+    "due_date": 1,
+    "bill_amount": 50
+  },
+  {
+    "name": "Bitcoin",
+    "bill_type": "Stock",
+    "due_date": 8,
+    "bill_amount": 60
+  }
+]
