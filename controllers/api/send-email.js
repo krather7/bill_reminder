@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+const cron = require('node-cron');
 require('dotenv').config();
 const {User} = require('../../models');
 const bcrypt = require('bcrypt');
@@ -23,14 +24,16 @@ let mailOption = {
     text: `Is this working?`,
 };
 
+    cron.schedule('* * 8, * sunday', () => {
 
-transporter.sendMail(mailOption, function (err, data) {
-    if(err) {
-        console.log(err);
-    }else {
-        console.log('Email sent: ' + data.response)
-    }
-});
+        transporter.sendMail(mailOption, function (err, data) {
+            if(err) {
+                console.log(err);
+            }else {
+                console.log('Email sent: ' + data.response)
+            }
+        });
+    });
 }
 // sendEmail();
 // const emailselector = async () => {
