@@ -19,7 +19,7 @@ const sendEmail = async () => {
 let mailOption = {
     from: 'bill.reminder.project@gmail.com',
     to: [user.email],
-    subject: 'testing',
+    subject: 'Upcoming Bill Due!',
     text: `Is this working?`,
 };
 
