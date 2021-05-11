@@ -9,7 +9,7 @@ const newFormHandler = async (event) => {
   if (billName && billAmount && dueDate && billType) {
     const response = await fetch(`/api/bills`, {
       method: 'POST',
-      body: JSON.stringify({ billName, billAmount, dueDate, billType }),
+      body: JSON.stringify({ name:billName, bill_amount:billAmount, due_date:dueDate, bill_type:billType }),
       headers: {
         'Content-Type': 'application/json',
       },
