@@ -7,7 +7,9 @@ router.get('/', async (req, res) => {
   try {
     sendEmail();
     console.log('Sent email!')
-
+  }
+  catch (err) {}
+}); 
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
