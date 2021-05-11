@@ -19,7 +19,7 @@
       </div>
       <div class="form-group">
         <label for="due-date">Due Date:</label>
-        <input class="form-input datepicker" type="date" id="due-date" name="due-date" />
+        <input class="form-input" type="number" id="due-date" name="due-date" />
       </div>
       <div class="form-group">
         <label for="bill-type">Bill Type:</label>
@@ -30,7 +30,6 @@
       </div>
     </form>
   </div>
-
 
   {{#if bills.length}}
   <div class="col-md-6 bill-list">
@@ -43,7 +42,7 @@
         <p href="/bill/{{bill.id}}">Amount Due:  ${{bill.bill_amount}}</p>
         <p href="/bill/{{bill.id}}">Due Date: {{bill.due_date}}</p>
         <p href="/bill/{{bill.id}}">Bill Type: {{bill.bill_type}}</p>
-        
+
       </div>
       <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{bill.id}}">DELETE</button>

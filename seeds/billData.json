@@ -2,7 +2,7 @@
   {
     "name": "House Payment",
     "bill_type": "Mortgage",
-    "due_date": "06-11-2021",
+    "due_date": 5,
     "bill_amount": 1000
   },
   {

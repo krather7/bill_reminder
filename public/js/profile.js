@@ -1,7 +1,6 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-
   const billName = document.querySelector('#bill-name').value.trim();
   const billAmount = document.querySelector('#bill-amount').value.trim();
   const dueDate = document.querySelector('#due-date').value.trim();
