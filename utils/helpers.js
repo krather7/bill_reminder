@@ -1,7 +1,7 @@
 module.exports = {
-  format_date: (date) => {
+  format_date: (due_date) => {
     // Format date as MM/DD/YYYY
-    return date.toLocaleDateString();
+    return due_date.toLocaleDateString();
   },
   format_amount: (amount) => {
     // format large numbers with commas

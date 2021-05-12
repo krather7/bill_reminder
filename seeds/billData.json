@@ -2,19 +2,19 @@
   {
     "name": "House Payment",
     "bill_type": "Mortgage",
-    "due_date": 5,
+    "due_date": "05-28-2021",
     "bill_amount": 1000
   },
   {
     "name": "Phone Payment",
     "bill_type": "Communication",
-    "due_date": 1,
+    "due_date": "05-30-2021",
     "bill_amount": 50
   },
   {
     "name": "Bitcoin",
     "bill_type": "Stock",
-    "due_date": 8,
+    "due_date": "06-01-2021",
     "bill_amount": 60
   }
 ]

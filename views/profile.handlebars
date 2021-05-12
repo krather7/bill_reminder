@@ -5,52 +5,59 @@
 </div>
 
 <div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Add a New Bill:</h3>
+  <div class="col-md-5">
+    <h3>Add a New Bill</h3>
 
     <form class="form new-bill-form">
       <div class="form-group">
-        <label for="bill-name">Bill Name:</label>
+        <label for="bill-name">✉️ Bill Name:</label>
         <input class="form-input" type="text" id="bill-name" name="bill-name" />
       </div>
       <div class="form-group">
-        <label for="bill-amount">Amount:</label>
-        <input class="form-input" type="number" id="bill-amount" name="bill-amount" />
+        <label for="bill-amount">💰 Amount:</label>
+        <input class="form-input" type="text" id="bill-amount" name="bill-amount" />
       </div>
       <div class="form-group">
-        <label for="due-date">Due Date:</label>
+        <label for="due-date">🗓️ Due Date:</label>
         <input class="form-input datepicker" type="date" id="due-date" name="due-date" />
       </div>
       <div class="form-group">
-        <label for="bill-type">Bill Type:</label>
-        <textarea class="form-input" type="text" id="bill-type" name="bill-type"></textarea>
+        <label for="bill-type">🗂️ Bill Type:</label>
+        <input class="form-input" type="text" id="bill-type" name="bill-type"></input>
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary">Add</button>
       </div>
     </form>
   </div>
 
   {{#if bills.length}}
-  <div class="col-md-6 bill-list">
-    <h3>Current Bills:</h3>
-
-    {{#each bills as |bill|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4 href="/bill/{{bill.id}}">{{bill.name}}</p>
-        <p href="/bill/{{bill.id}}">Amount Due:  ${{bill.bill_amount}}</p>
-        <p href="/bill/{{bill.id}}">Due Date: {{bill.due_date}}</p>
-        <p href="/bill/{{bill.id}}">Bill Type: {{bill.bill_type}}</p>
-
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{bill.id}}">DELETE</button>
-      </div>
+    <div class="col-md-7 bill-list">
+      <h3>Current Bills</h3>
+<table class="tablesorter"> <!-- add materialize classes, as desired -->
+  <thead>
+    <tr>
+      <th class="table-header">Name</th>
+      <th class="table-header">Amount Due</th>
+      <th class="table-header">Due Date</th>
+      <th class="table-header">Bill Type</th>
+      </tr>
+  </thead>
+  
+  <tbody>
+          {{#each bills as |bill|}}
+    <tr>
+      <td><href="/bill/{{bill.id}}">{{bill.name}}</td>
+      <td><href="/bill/{{bill.id}}">${{bill.bill_amount}}</td>
+      <td><href="/bill/{{bill.id}}">{{bill.due_date}}</td>
+      <td><href="/bill/{{bill.id}}">{{bill.bill_type}}</td>
+      <td><button class="btn btn-sm btn-danger" data-id="{{bill.id}}">DELETE</button></td>
+    </tr>
+         {{/each}}
+  </tbody>
+</table>
+         {{/if}}
     </div>
-    {{/each}}
-  </div>
-  {{/if}}
-</div>
+
 
 <script src="./js/profile.js"></script>

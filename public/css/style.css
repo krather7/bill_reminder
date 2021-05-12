@@ -1,5 +1,5 @@
 header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 3px solid #ccc;
 }
 
 .no-button {
@@ -7,13 +7,13 @@ header, .project:not(:last-child) {
   border: none;
   padding: 0;
   cursor: pointer;
-  color: #1b89bc;
+  color: #ffffff;
   text-decoration: none;
   font-size: 100%;
 }
 
 .no-button:hover {
-  color: #065b83;
+  color: #ffffff;
   text-decoration: underline;
 }
 
@@ -21,4 +21,51 @@ header, .project:not(:last-child) {
   color: #056605;
   font-weight: bold;
   margin-left: -5px;
+}
+
+.section{
+background-color:rgb(46, 46, 46);
+border-radius:10px;
+margin: 0%;
+padding: 1%;
+}
+
+.table-header:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+input:hover{
+  cursor: pointer;
+}
+
+label:hover{
+  cursor: pointer;
+}
+
+input, select, form{
+  color: white;
+}
+
+form:focus, input:focus {
+  color: white;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: rgb(255, 255, 255);
+  -webkit-box-shadow: 0 0 0px 1000px grey inset;
+  transition: background-color 5000s ease-in-out 0s;
+  border-bottom: 2px solid white;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px grey inset !important;
 }

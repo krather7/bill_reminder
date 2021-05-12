@@ -353,12 +353,15 @@ body {
   min-height: 100%;
 }
 
+
+
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  font-size: 16px;
-  color: #1a1a1a;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  background-color:grey;
 }
 
 h1,
@@ -377,14 +380,17 @@ h1 {
 
 h2 {
   font-size: 2rem;
+  text-align:center;
 }
 
 h3 {
   font-size: 1.75rem;
+  text-decoration: underline;
+  text-align: center;
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 h5 {
@@ -396,9 +402,9 @@ h6 {
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin: 0 0 1rem;
-  line-height: 1.5;
+  line-height: 1.1;
 }
 
 ul,
@@ -420,12 +426,12 @@ button {
 }
 
 a {
-  color: #1b89bc;
+  color: #ffffff;
   text-decoration: none;
 }
 
 a:hover {
-  color: #065b83;
+  color: #cecece;
   text-decoration: underline;
 }
 
@@ -912,7 +918,7 @@ a:hover {
 }
 
 .text-link {
-  color: #1b89bc !important;
+  color: #ffffff !important;
 }
 
 /* BACKGROUND UTILS */
@@ -945,7 +951,7 @@ a:hover {
 }
 
 .bg-link {
-  background-color: #1b89bc !important;
+  background-color: #ffffff !important;
 }
 
 /* DISPLAY */
@@ -1018,12 +1024,12 @@ a:hover {
 }
 
 .btn.btn-danger {
-  background-color: #e64c66;
-  color: #ffffff;
+  background-color: #2d3e50;
+  color: #d9e9e8;
 }
 
 .btn.btn-danger:hover {
-  background-color: #ee8294;
+  background-color: #57779a;
 }
 
 .btn.btn-info {
@@ -1072,22 +1078,22 @@ a:hover {
 }
 
 .btn.btn-link {
-  background-color: #1b89bc;
+  background-color: #ffffff;
   color: #ffffff;
 }
 
 .btn.btn-link:hover {
-  background-color: #31a9e1;
+  background-color: #ffffff;
 }
 
 .card {
-  border: 1px solid #1a1a1a;
+  border: 1px solid #ffffff;
   margin-bottom: 1rem;
 }
 
 .card .card-header {
   padding: 0.375rem;
-  background-color: #2d3e50;
+  background-color: #ffffff;
   color: #d9e9e8;
 }
 
@@ -1126,7 +1132,6 @@ form .form-textarea {
 form select {
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
   background-repeat: no-repeat;
   background-position-x: 98%;
   background-position-y: 50%;
@@ -1137,12 +1142,14 @@ form .form-label {
   display: inline-block;
   font-size: 1.2rem;
   margin: 0.625rem 0 0.25rem 0.3rem;
+  color:white;
+  padding:1%
 }
 
 form .form-input {
   width: 100%;
   padding: 0.75rem;
-  color: #1a1a1a;
+  color: white;
   background-color: #ffffff;
   margin: 0.625rem 0;
   font-size: 1.2rem;
@@ -1151,7 +1158,7 @@ form .form-input {
 }
 
 form .form-input.form-input-squared {
-  border-radius: 0;
+  border-radius: 10%;
 }
 
 form [type='checkbox'],
@@ -1166,7 +1173,7 @@ form [type='radio'] {
 
 .container {
   width: 85%;
-  max-width: 1200px;
+  max-width: 12000px;
   margin-left: auto;
   margin-right: auto;
 }
