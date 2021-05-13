@@ -42,30 +42,37 @@ const cron = require('node-cron');
 
 // module.exports = sendEmail;
 
-let transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-        user: "bill.reminder.project@gmail.com",
-        pass: "fleetwoodmac"
-    }
-})
 
-cron.schedule("* * * * *", () => {
-    console.log("sending email")
-    let mailOptions = {
-        from: "bill.reminder.project@gmail.com",
-        to: "samuel6roth@gmail.com",
-        subject: "Nodemailer",
-        text: "Testing Nodemailer",
-        html: "<h1>Testing Nodemailer</h1>"
+
+
+const emailSender = async () => {
+
+    let transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+            user: "bill.reminder.project@gmail.com",
+            pass: "fleetwoodmac"
+        }
+    })
+
+    cron.schedule("*/10 * * * * *", () => {
+        console.log("sending email")
+        let mailOptions = {
+            from: "bill.reminder.project@gmail.com",
+            to: "samuel6roth@gmail.com",
+            subject: "Nodemailer",
+            text: "Testing Nodemailer",
+            html: "<h1>Testing Nodemailer</h1>"
+    }
+
+    transporter.sendMail(mailOptions, (err, info) => {
+        if (err) {
+            console.log("error occurred", err)
+        } else {
+            console.log("email sent", info)
+        }
+    })
+    })
 }
 
-
-transporter.sendMail(mailOptions, (err, info) => {
-    if (err) {
-        console.log("error occurred", err)
-    } else {
-        console.log("email sent", info)
-    }
-  })
-})
+module.exports = emailSender;
