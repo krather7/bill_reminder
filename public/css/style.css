@@ -69,3 +69,19 @@ select:-webkit-autofill:focus {
 input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px grey inset !important;
 }
+
+#nav a{
+  color: #CECECE;;
+}
+
+#nav a:visited{
+color: o;
+}
+
+#nav a:hover{
+  color: #CECECE;;
+}
+
+#nav .active {
+  color: #CECECE;;
+}
