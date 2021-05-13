@@ -1,6 +1,37 @@
 const router = require('express').Router();
-const { Bill } = require('../../models');
+const { Bill, User } = require('../../models');
 const withAuth = require('../../utils/auth');
+
+//==========================================
+// GET all bills
+router.get('/', async (req, res) => {
+  try {
+    const billData = await Bill.findAll(
+      {include: [{ model: User }],
+      });
+    res.status(200).json(billData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+//==========================================
+// GET a single bill
+router.get('/:id', async (req, res) => {
+  try {
+    const billData = await Bill.findByPk(req.params.id,{
+      include: [{ model: User }],
+    });
+    if (!billData) {
+      res.status(404).json({ message: 'No user bill with this id!' });
+      return;
+    }
+
+    res.status(200).json(billData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+//==========================================
 
 router.post('/', withAuth, async (req, res) => {
   try {
