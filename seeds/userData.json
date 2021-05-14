@@ -1,7 +1,7 @@
 [
   {
     "name": "Kyle",
-    "email": "kyle@gmail.com",
+    "email": "krather7@gmail.com",
     "password": "password"
   },
   {
@@ -10,8 +10,13 @@
     "password": "password"
   },
   {
+    "name": "Kyle F",
+    "email": "florez.photo@gmail.com",
+    "password": "password"
+  },
+  {
     "name": "Spenser",
-    "email": "spenser@gmail.com",
+    "email": "spenserlogan@gmail.com",
     "password": "password"
   }
 ]
