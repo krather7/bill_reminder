@@ -2,20 +2,19 @@ const nodemailer = require('nodemailer');
 const cron = require('node-cron');
 require('dotenv').config();
 const { User } = require('../../models');
-// const sendEmail = async () => {
-//     const userRaw = await User.findByPk(4)
-//     const user = userRaw.get({ plain: true })
-//     console.log('>>> user data : ', user);
-// let mailOption = {
-//     from: 'bill.reminder.project@gmail.com',
-//     to: [user.email],
-//     subject: 'Upcoming Bill Due!',
-//     text: `Is this working?`,
-// };
+
+// THIS CODE WORKS //
+// const userRaw = await User.findByPk(1)
+// const user = userRaw.get({ plain: true })
+// console.log('>>> user data : ', user);
+// to: [user.email],
+
 const emailSender = async () => {
-    const userRaw = await User.findByPk(2)
-    const user = userRaw.get({ plain: true })
-    console.log('>>> user data : ', user);
+
+    const users = await User.findAll();
+    const allUsers = (JSON.stringify(users, null, 2));
+    console.log("All users:", allUsers)
+
     let transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
@@ -27,7 +26,7 @@ const emailSender = async () => {
         console.log("sending email")
         let mailOptions = {
             from: "bill.reminder.project@gmail.com",
-            to: [user.email],
+            to: "samuel6roth@gmail.com",
             subject: "Nodemailer",
             text: "Testing Nodemailer",
             html: "<h1>Testing Nodemailer</h1>"
@@ -41,4 +40,5 @@ const emailSender = async () => {
     })
     })
 }
+
 module.exports = emailSender;
