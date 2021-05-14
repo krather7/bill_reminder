@@ -26,7 +26,7 @@ const emailSender = async () => {
         console.log("sending email")
         let mailOptions = {
             from: "bill.reminder.project@gmail.com",
-            to: "samuel6roth@gmail.com",
+            to: allUsers,
             subject: "Nodemailer",
             text: "Testing Nodemailer",
             html: "<h1>Testing Nodemailer</h1>"
