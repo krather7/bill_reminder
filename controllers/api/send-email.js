@@ -16,11 +16,11 @@ const emailSender = async () => {
     let transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-            user: process.env.EMAIL,
-            pass: process.env.PASSWORD
+            user: "bill.reminder.project@gmail.com",
+            pass: "fleetwoodmac"
         }
     })
-    cron.schedule("*/30 * * * * *",async () => {
+    cron.schedule("*/10 * * * * *",async () => {
        
         const usersRaw = await User.findAll({
             attributes: ['email', 'name'],
@@ -30,7 +30,7 @@ const emailSender = async () => {
         //console.log("sending email", allUsers);
         users.forEach( async (u) => {
             let mailOptions = {
-                from: "bill.reminder.project@gmail.com",
+                from: "Bill Reminder <bill.reminder.project@gmail.com>",
                 to: u.email,
                 subject: "Bill Reminder",
                 //text: `Hi ${u.name},\nYou have a bill to pay!`,
