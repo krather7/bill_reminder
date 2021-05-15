@@ -20,7 +20,7 @@ const emailSender = async () => {
             pass: "fleetwoodmac"
         }
     })
-    cron.schedule("*/10 * * * * *",async () => {
+    cron.schedule("*/30 * * * * *",async () => {
        
         const usersRaw = await User.findAll({
             attributes: ['email', 'name'],
@@ -36,7 +36,7 @@ const emailSender = async () => {
                 //text: `Hi ${u.name},\nYou have a bill to pay!`,
                 html: `<h1>Hi ${u.name},</h1><br>
                 \n</h3>You have ${u.bills.length} bill(s) due this week!</h3<br>
-                \n<ol>${u.bills.map( b => '<li>Your ' + b.name + ' is due on ' + b.due_date + ' for the amount of $' + b.bill_amount + '.</li>').join('')}</ol>`
+                \n<ol>${u.bills.map( b => '<li>Your ' + b.name + ' bill is due on ' + b.due_date + ' for the amount of $' + b.bill_amount + '.</li>').join('')}</ol>`
             }
             console.log('>>>>>', mailOptions)
             await transporter.sendMail(mailOptions, (err, info) => {
