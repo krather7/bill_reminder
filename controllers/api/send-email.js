@@ -11,6 +11,7 @@ const { User, Bill } = require('../../models');
 
 const emailSender = async () => {
 
+
     const usersRaw = await User.findAll({
         attributes: ['email', 'name'],
         include: [{model: Bill}]
@@ -23,6 +24,7 @@ const emailSender = async () => {
 
 
 
+
     let transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
@@ -31,6 +33,7 @@ const emailSender = async () => {
         }
     })
     cron.schedule("*/10 * * * * *", () => {
+
         //console.log("sending email", allUsers);
 
         users.forEach( async (u) => {
@@ -64,6 +67,7 @@ const emailSender = async () => {
     //         console.log("email sent", info)
     //     }
     // })
+
     })
 }
 
