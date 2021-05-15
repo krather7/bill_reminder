@@ -11,20 +11,17 @@ const { User, Bill } = require('../../models');
 
 const emailSender = async () => {
 
-    const users = await User.findAll();
-    const allUsers = (JSON.stringify(users, null, 2));
 
-    const bills = await Bill.findAll({
-        include: [
-            {
-                model: User,
-                attributes: ['name']
-            },
-        ],
+    const usersRaw = await User.findAll({
+        attributes: ['email', 'name'],
+        include: [{model: Bill}]
     });
-    const billData = (JSON.stringify(bills, null, 2));
+    const users = usersRaw.map( u => u.get({plain: true}))
+    // const allUsers = (JSON.stringify(users.map((u) =>{
+    //     return u.email;
+    //     }), null, 2));
+    //console.log("All users:", JSON.stringify(users, null, 2))
 
-    console.log("All users:", billData)
 
 
 
@@ -36,21 +33,41 @@ const emailSender = async () => {
         }
     })
     cron.schedule("*/10 * * * * *", () => {
-        console.log("sending email")
-        let mailOptions = {
-            from: "bill.reminder.project@gmail.com",
-            to: allUsers,
-            subject: "Nodemailer",
-            text: billData,
-            //html: "<h1>Testing Nodemailer</h1>"
-    }
-    transporter.sendMail(mailOptions, (err, info) => {
-        if (err) {
-            console.log("error occurred", err)
-        } else {
-            console.log("email sent", info)
-        }
-    })
+
+        //console.log("sending email", allUsers);
+
+        users.forEach( async (u) => {
+            let mailOptions = {
+                from: "bill.reminder.project@gmail.com",
+                to: u.email,
+                subject: "Bill Remainder",
+                text: `Hi ${u.name},\nYou have a bill to pay!`,
+                html: `<h1>Hey ${u.name},\nYou got ${u.bills.length} bill(s).</h1><br><p>${u.bills.map( b => b.name + ', ')}</p>`
+            }
+            console.log('>>>>>', mailOptions)
+            await transporter.sendMail(mailOptions, (err, info) => {
+                if (err) {
+                    console.log("error occurred", err)
+                } else {
+                    console.log("email sent", info)
+                }
+            })
+        })
+    //     let mailOptions = {
+    //         from: "bill.reminder.project@gmail.com",
+    //         to: allUsers,
+    //         subject: "Nodemailer",
+    //         text: "Testing Nodemailer",
+    //         html: "<h1>Testing Nodemailer</h1>"
+    // }
+    // transporter.sendMail(mailOptions, (err, info) => {
+    //     if (err) {
+    //         console.log("error occurred", err)
+    //     } else {
+    //         console.log("email sent", info)
+    //     }
+    // })
+
     })
 }
 
