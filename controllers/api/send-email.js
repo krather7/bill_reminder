@@ -3,14 +3,9 @@ const cron = require('node-cron');
 require('dotenv').config();
 const { User, Bill } = require('../../models');
 
-// THIS CODE WORKS //
-// const userRaw = await User.findByPk(1)
-// const user = userRaw.get({ plain: true })
-// console.log('>>> user data : ', user);
-// to: [user.email],
+
 
 const emailSender = async () => {
-
 
     const usersRaw = await User.findAll({
         attributes: ['email', 'name'],
@@ -22,9 +17,6 @@ const emailSender = async () => {
     //     }), null, 2));
     //console.log("All users:", JSON.stringify(users, null, 2))
 
-
-
-
     let transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
@@ -32,7 +24,7 @@ const emailSender = async () => {
             pass: process.env.PASSWORD
         }
     })
-    cron.schedule("*/10 * * * * *", () => {
+    cron.schedule("*/45 * * * * *", () => {
 
         //console.log("sending email", allUsers);
 
@@ -40,9 +32,11 @@ const emailSender = async () => {
             let mailOptions = {
                 from: "bill.reminder.project@gmail.com",
                 to: u.email,
-                subject: "Bill Remainder",
-                text: `Hi ${u.name},\nYou have a bill to pay!`,
-                html: `<h1>Hey ${u.name},\nYou got ${u.bills.length} bill(s).</h1><br><p>${u.bills.map( b => b.name + ', ')}</p>`
+                subject: "Bill Reminder",
+                //text: `Hi ${u.name},\nYou have a bill to pay!`,
+                html: `<h1>Hi ${u.name},</h1><br>
+                \n</h3>You have ${u.bills.length} bill(s) due this week!</h3<br>
+                \n<ol><li>${u.bills.map( b => 'Your ' + b.name + ' is due on ' + b.due_date + ' for the amount of $' + b.bill_amount + '.')}<li></ol>`
             }
             console.log('>>>>>', mailOptions)
             await transporter.sendMail(mailOptions, (err, info) => {
@@ -53,21 +47,6 @@ const emailSender = async () => {
                 }
             })
         })
-    //     let mailOptions = {
-    //         from: "bill.reminder.project@gmail.com",
-    //         to: allUsers,
-    //         subject: "Nodemailer",
-    //         text: "Testing Nodemailer",
-    //         html: "<h1>Testing Nodemailer</h1>"
-    // }
-    // transporter.sendMail(mailOptions, (err, info) => {
-    //     if (err) {
-    //         console.log("error occurred", err)
-    //     } else {
-    //         console.log("email sent", info)
-    //     }
-    // })
-
     })
 }
 
