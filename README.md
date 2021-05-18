@@ -12,7 +12,6 @@ Upon user input of bill / other information; This app will remind you via e-mail
 * [Future-Improvements](#Future-Improvements)
 * [License](#License)
 * [Contributing](#Contributions-/-Contributors)
-* [Test](#Test)
 * [Deployed App](#Link-To-Deployed-App)
 * [Questions](#Questions)
  
@@ -38,7 +37,6 @@ There is more we would like to achieve in the future with the functionality and 
 # Contributions / Contributors
 Kyle Florez, Kyle Rather, Samuel Roth, Spenser Cambron
 
-# Test
 
 # Link To Deployed App
 https://bill-reminder-project2.herokuapp.com/
