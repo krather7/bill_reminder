@@ -3,8 +3,7 @@
   ![badge](https://img.shields.io/badge/License-MIT-Green)
 ![easy-bill-screenshot](https://user-images.githubusercontent.com/67348654/118578739-52d7ae80-b752-11eb-9439-f3a6d041e4ff.png)
 # Description
-Upon user input of bill / other information; This app will remind you via e-mail when that bill is due and how much you are paying that month cumulitivly.
-
+Upon user input of bill(s) information - this app will remind you with a personalized e-mail when your bill(s) are due and the amount due.
 # Table of Contents
 
 * [Installation](#Installation)
@@ -19,8 +18,8 @@ Upon user input of bill / other information; This app will remind you via e-mail
 The technologies used for this project include NodeMailer, Express, Sequelize, Handlebars, Bycrypt. 
 
 
-# Usuage
-Remind User of up-comming bills.
+# Usage
+Remind user of upcoming bills.
 
 # Future-Improvemnets
 There is more we would like to achieve in the future with the functionality and user accessibility, here are few.
