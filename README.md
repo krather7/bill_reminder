@@ -1,7 +1,7 @@
-# Bill Reminder
+# Easy Bill
 
   ![badge](https://img.shields.io/badge/License-MIT-Green)
-
+![easy-bill-screenshot](https://user-images.githubusercontent.com/67348654/118578739-52d7ae80-b752-11eb-9439-f3a6d041e4ff.png)
 # Description
 Upon user input of bill / other information; This app will remind you via e-mail when that bill is due and how much you are paying that month cumulitivly.
 
@@ -12,7 +12,7 @@ Upon user input of bill / other information; This app will remind you via e-mail
 * [Future-Improvements](#Future-Improvements)
 * [License](#License)
 * [Contributing](#Contributions-/-Contributors)
-* [Test](#Test)
+* [Deployed App](#Link-To-Deployed-App)
 * [Questions](#Questions)
  
 # Installation
@@ -37,8 +37,9 @@ There is more we would like to achieve in the future with the functionality and 
 # Contributions / Contributors
 Kyle Florez, Kyle Rather, Samuel Roth, Spenser Cambron
 
-# Test
 
+# Link To Deployed App
+https://bill-reminder-project2.herokuapp.com/
 
 
 # Questions
@@ -46,4 +47,4 @@ If you have any questions or problems... Please feel free to contact me:
 
 E-mail: Florez.Photo@Gmail.com, Krather7@gmail.com, SpenserLogan@Gmail.com, Samuel6Roth@Gmail.com         
 
-Github: [](https://github.com/)
+Github: [SLUDGE-GIT](https://github.com/SLUDGE-GIT)  [krather7](https://github.com/krather7)  [spenserlogan](https://github.com/spenserlogan)  [samuel6roth](https://github.com/samuel6roth)
