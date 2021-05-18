@@ -20,7 +20,7 @@ const emailSender = async () => {
             pass: "fleetwoodmac"
         }
     })
-    cron.schedule("*/30 * * * * *",async () => {
+    cron.schedule("* * */7 * * *",async () => {
        
         const usersRaw = await User.findAll({
             attributes: ['email', 'name'],
