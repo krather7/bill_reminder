@@ -46,4 +46,4 @@ If you have any questions or problems... Please feel free to contact me:
 
 E-mail: Florez.Photo@Gmail.com, Krather7@gmail.com, SpenserLogan@Gmail.com, Samuel6Roth@Gmail.com         
 
-Github: [](https://github.com/)
+Github: [SLUDGE-GIT](https://github.com/SLUDGE-GIT)  [krather7](https://github.com/krather7)  [spenserlogan](https://github.com/spenserlogan)  [samuel6roth](https://github.com/samuel6roth)
