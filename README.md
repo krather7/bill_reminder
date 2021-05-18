@@ -1,4 +1,4 @@
-# Bill Reminder
+# Easy Bill
 
   ![badge](https://img.shields.io/badge/License-MIT-Green)
 
